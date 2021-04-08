@@ -1,12 +1,13 @@
+print("LSW Version 1.0")
 import os
-import subproccess
+import subprocess
 import socket
 import sys
 import threading
 import time
 import pickle
 def start_lsw():
-    subproccess.open(["source","lsw.sh"])
+    subprocess.Popen(["source","lsw.sh"])
 if not os.path.exists("lsw.sh"):
     import lswgen
 print("Starting Windows")
@@ -25,10 +26,20 @@ while True:
 print('Connected to server.')
 print('Welcome to LSW')
 while True:
-    print('Windows Shell>')
-    cmd = input()
+    cmd = input("Windows Shell>")
     cmd = cmd.split(" ")
     cmd = pickle.dumps(cmd)
     s.send(cmd)
+    cmd = b'\n'
+    s.send(cmd)
+    output = bytearray()
+    data = None
+    while data != '\xFF':
+        data = s.recv(1)
+        if data != '\xFF':
+            output += data
+    output = str(bytes(data))[2:-1]
+    print(output)
+            
 
     

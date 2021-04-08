@@ -1,0 +1,14 @@
+{
+    "drives":[
+        {
+            "id":"Windows_10_Installer",
+            "format":"raw",
+            "file":"Windows_10_Installer.iso"
+        },
+        {
+            "id":"LSWDisk",
+            "format":"qcow2",
+            "file":"LSWDisk.qcow2"
+        }
+    ]
+}

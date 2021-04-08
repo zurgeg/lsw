@@ -1,0 +1,12 @@
+{
+    "machine":{
+        "accelerator":"kvm"
+    },
+    "disks":[
+        {
+            "id":"Windows_10_Installer",
+            "format":"raw",
+            "file":"Windows_10_Installer.iso"
+        }
+    ]
+}
