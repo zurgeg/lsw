@@ -169,6 +169,7 @@ def generate_sh(file,script_location='boot.sh'):
         else:
             print(Fore.YELLOW + '[WARNING] Number of cores was not specified. Falling back to 2.' + Fore.RESET)
             script.write("4,cores=2")
+        
         script.write(" \\\n")
     if 'drives' in keys:
         vmfile['disks'] = vmfile['drives']
