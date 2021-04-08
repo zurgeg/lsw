@@ -1,0 +1,6 @@
+# Python caches
+__pycache__
+spinuptools/__pycache__
+# Scripts
+lsw.sh
+setup
